@@ -9,20 +9,20 @@ const BookSchema = new Schema ({
     authors: [
         {
             type: String,
-            required: true
+            // required: true
         }
     ],
     description: {
         type: String,
-        required: true
+        // required: true
     },
     image: {
         type: String,
-        required: true
+        // required: true
     },
     link: {
         type: String,
-        required: true
+        // required: true
     }
 });
 
