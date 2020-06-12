@@ -1,0 +1,32 @@
+{
+  "name": "googlingbooks",
+  "version": "1.0.0",
+  "description": "MERN stack application using Google Books API",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baileedastugue/googlingBooks.git"
+  },
+  "author": "Bailee Dastugue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baileedastugue/googlingBooks/issues"
+  },
+  "homepage": "https://github.com/baileedastugue/googlingBooks#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
