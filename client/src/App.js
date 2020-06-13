@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import { Container } from 'reactstrap';
-import AppNavbar from './components/AppNavbar/index';
+// import { Container } from 'reactstrap';
+// import AppNavbar from './components/AppNavbar/index';
 // import Search from './pages/Search';
 import Saved from './pages/Saved';
 // import NoMatch from './pages/NoMatch';

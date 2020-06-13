@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export default {
     getBooks: function() {
-        return axios.get('api/books');
+        console.log("hello");
+        return axios.get('/api/saved');
     }
 }

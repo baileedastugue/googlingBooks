@@ -1,5 +1,5 @@
-import React, { Compartment, Component } from 'react';
-import { Container, ListGroupItem, Button, ListGroup } from 'reactstrap';
+import React, { Component } from 'react';
+import { Container, ListGroupItem, ListGroup } from 'reactstrap';
 import AppNavbar from '../components/AppNavbar/index';
 import API from "../utils/API";
 
@@ -14,10 +14,12 @@ class Saved extends Component {
 
     loadBooks = () => {
         API.getBooks()
-            .then(savedBooks => 
-                this.setState({ books: savedBooks.data }))
-            .catch(err => console.log(err));
-    }
+          .then(res => {
+            this.setState({ books: res.data })
+            console.log("hello from line 19");
+          })
+          .catch(err => console.log(err.response));
+      };
 
     render() {
         return (
@@ -26,7 +28,12 @@ class Saved extends Component {
                 <Container>
                     <ListGroup>
                         <h1>Did this load?</h1>
-                        {/* {this.state.b} */}
+                        {this.state.books.map(savedBook => (
+                            <ListGroupItem>
+                                { savedBook.title }
+                            </ListGroupItem>
+                        ))}
+                        { this.state.books.length }
                     </ListGroup>
                 </Container>
             </div>

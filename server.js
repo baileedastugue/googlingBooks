@@ -2,14 +2,18 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser  = require("body-parser");
+const cors = require('cors');
 
-const books = require('./routes/api/books');
+const saved = require('./routes/api/saved');
 
 const app = express();
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(cors())
+
 // app.use(bodyParser.json());
 
 // if (process.env.NODE_ENV === 'production') {
@@ -26,7 +30,7 @@ mongoose
     .catch(err => console.log(err));
 
 // Use routes
-app.use('/api/books', books);
+app.use('/api/saved', saved);
 
 const PORT = process.env.PORT || 4000;
 
